@@ -39,8 +39,28 @@ class UserService:
     def validate(self, username, password, password_confirmation):
         if not username or not password:
             raise UserInputError("Username and password are required")
+        if len(username) < 3 or len(username) > 15:
+            raise UserInputError("Username length must be between 3-15")
 
-        # toteuta loput tarkastukset tänne ja nosta virhe virhetilanteissa
+        number = False
+        symbol = False
+
+        if len(password) < 4 or len(password) > 30:
+            raise UserInputError("Password length must be at least 8")
+        for i in password:
+            if i in "0123456789":
+                number = True
+                break
+            if i not in "0123456789abcdefghijklmnopqrstuvwxyz":
+                symbol = True
+                break
+        if not number:
+            raise UserInputError("Password must contain at least one number")
+        if symbol:
+            raise UserInputError(
+                "Password must contain only numbers or letters")
+        if password != password_confirmation:
+            raise UserInputError("Passwords do not match")
 
 
 user_service = UserService()

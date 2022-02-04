@@ -36,8 +36,8 @@ class UserService:
     def validate(self, username, password):
         if not username or not password:
             raise UserInputError("Username and password are required")
-        if len(username) < 2 or len(username) > 15:
-            raise UserInputError("Username length must be between 2-15")
+        if len(username) < 3 or len(username) > 15:
+            raise UserInputError("Username length must be between 3-15")
 
         number = False
         symbol = False

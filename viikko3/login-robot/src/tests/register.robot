@@ -13,7 +13,7 @@ Register With Already Taken Username And Valid Password
 
 Register With Too Short Username And Valid Password
     Input Credentials  k  kisul1xi
-    Too Short Name Output Should Contain  Username length must be between 2-15
+    Too Short Name Output Should Contain  Username length must be between 3-15
 
 Register With Valid Username And Too Short Password
     Input Credentials  kisse  k
