@@ -14,7 +14,7 @@ class Ostoskori:
     def hinta(self):
         sum = 0
         for ostos in self.ostokset:
-            sum += ostos.hinta
+            sum += ostos.hinta()
         return sum
 
 
