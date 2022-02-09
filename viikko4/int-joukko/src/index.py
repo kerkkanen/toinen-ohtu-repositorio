@@ -11,6 +11,7 @@ def main():
     joukko.lisaa(2)
 
     print(joukko.to_int_list())
+    print(joukko)
 
 
 if __name__ == "__main__":
